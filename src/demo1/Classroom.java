@@ -22,7 +22,7 @@ public class Classroom {
 	
 	public void takeAttendance(Scanner input) { 
 		for(Student currentChild: this.getClassroom()) {
-			System.out.println("Is " + currentChild.getFirstName() + " present in " + this.getName() + " today ([0] = yes / [1] = no): ");
+			System.out.println("Is " + currentChild.getFirstName() + " present in " + this.getName() + " today ( [0] = yes ): ");
 			System.out.print("> ");
 			int n = input.nextInt();
 			if(n == 0) 

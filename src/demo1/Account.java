@@ -36,27 +36,13 @@ public class Account {
 		Scanner bioReader = new Scanner(System.in);
 		Biology.takeAttendance(bioReader);
 		
-		Scanner goOn = new Scanner(System.in);
-		System.out.println("Do you want to continue: ");
-		System.out.print("> ");
-		String choice = null;
-		if(goOn.hasNext()) {
-			choice = goOn.next();		
-			if(choice == "yes") {	
-				System.out.println("[ " + Physics.getName()+" Class ]");
-				Scanner phyReader = new Scanner(System.in);
-				Physics.takeAttendance(phyReader);
-			
-				// Log Both Reports
-				System.out.println(Biology.logReport());
-				System.out.println(Physics.logReport());
-			} else if(choice == "no") {
-			
-			// Log Biology Report Alone
-			System.out.println(Biology.logReport());
-		} 
+		// Log Biology
+		System.out.println(Biology.logReport());
 		
-		goOn.close();
+		// Log Physics 
+		System.out.println("[ " + Physics.getName()+" Class ]");
+		Scanner phyReader = new Scanner(System.in);
+		Physics.takeAttendance(phyReader);
+		System.out.println(Physics.logReport());	
 	}
-  }
 }
