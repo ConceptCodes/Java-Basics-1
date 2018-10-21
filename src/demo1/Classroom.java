@@ -5,20 +5,30 @@ import java.util.*;
 public class Classroom {
 	private ArrayList<Student> classroom = new ArrayList<Student>();
 	private String classroomName;
+	private Teacher teacher;
 	
-	Classroom(String className) { this.setName(className); }
+	Classroom(Teacher teacher, String className) { this.classroomName = className; this.teacher = teacher; }
 	
+	// Setter Methods
+	public void setName(String name) { this.classroomName = name; }
+	
+	public void setTeacher(Teacher teacher) { this.teacher =  teacher;}
+	
+	
+	// Getter Methods
 	public String getName() { return classroomName; }
 	
-	public int getClassroomSize() { return this.classroom.size(); }
+	public int getClassroomSize() { return classroom.size(); }
 	
 	public ArrayList<Student> getClassroom() {  return classroom;  }
 	
-	public void setName(String name) { this.classroomName = name; }
+	public Student getStudent(int index) { return classroom.get(index); }
 	
+	public Teacher getTeacher() { return teacher; }
+	
+	
+	// Helper Functions
 	public void addStudent(Student newStudent) {  this.classroom.add(newStudent);	}
-	
-	public Student getStudent(int index) { return this.classroom.get(index); }
 	
 	public void takeAttendance(Scanner input) { 
 		for(Student currentChild: this.getClassroom()) {
@@ -28,7 +38,6 @@ public class Classroom {
 			if(n == 0) 
 				currentChild.isHere();  
 		}
-		input.close();
 	}
 		
 	public String logReport() {
@@ -37,4 +46,5 @@ public class Classroom {
 			log += (String) child.toString() + "\n";
 		return log;
 	}
+	
 }

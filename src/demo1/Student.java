@@ -1,31 +1,38 @@
 package demo1;
 
-public class Student {
-	private String firstName = "";
-	private String lastName = "";
-	private int grade = 0;
-	private boolean present;
+public class Student extends Person {
+	private boolean present = false;
 	
-	public Student(String fname, String lname, int grade, boolean present) {
-		this.firstName = fname;
-		this.lastName = lname;
-		this.grade = grade;
+	public Student(String fname, String lname, int age, String race, int grade, boolean present) {
+		super(fname, lname, age, race, grade);
 		this.present = present;
 	}
 	
-	public void setLastName(String lastname) {  this.lastName = lastname;   }
+	// Setter Methods
+	public void setLastName(String lastname) {  super.setlastName(lastname);  }
 	
-	public void setFirstName(String firstname) {  this.firstName = firstname; }
+	public void setFirstName(String firstname) {  super.setFirstName(firstname); }
 	
-	public void setGrade(int grade) {  this.grade = grade; }
+	public void setGrade(int grade) { super.setGradeLevel(grade); }
+	
+	public void setAge(int age) { super.setAge(age); }
+	
+	public void setRace(String colour) { super.setRace(colour); }
 	
 	public void isHere() { this.present = true; }
 	
-	public String getFirstName() {  return (String) firstName;  }
+	// Getter Methods
+	public String getFirstName() {  return (String) super.getFirstName();  }
 	
-	public String getLastName() {  return (String) lastName;  }
+	public String getLastName() {  return (String) super.getLastName();  }
 	
-	public int getGrade() { return grade; }
+	public String getFullName() { return (String) super.getFullName(); }
+	
+	public int getGrade() { return super.getGradeLevel(); }
+	
+	public int getAge() { return super.getAge(); }
+	
+	public String getRace() { return super.getRace(); }
 	
 	public String getAttendance() { 
 		if(this.present)
@@ -34,6 +41,5 @@ public class Student {
 			return "Absent";
 	}
 	
-	public String toString() {	return "[ Student Name: " + this.getFirstName() + " " + this.getLastName() + " || Grade: " + this.getGrade() +"th || Present: "+ this.getAttendance() +" ]";	}
-
+	public String toString() {	return "[ Student Name: " + this.getFullName() + " || Grade: " + this.getGrade() +"th || Age: "+ this.getAge() +" || Race: "+ this.getRace() +" || Present: "+ this.getAttendance() +" ]";	}
 }

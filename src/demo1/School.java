@@ -10,10 +10,13 @@ public class School {
 		this.name = schoolName;
 	}
 	
+	// Setter Methods
 	public void setName(String name) {  this.name = name;  }
 	
 	public void setClasses(ArrayList<Classroom> classes) {  if(classes.size() > 0) { this.classes = classes; } }
 	
+	
+	// Getter Methods
 	public String getName() {  return name;  }
 	
 	public ArrayList<Classroom> getClasses() {  return classes;  }
@@ -22,5 +25,6 @@ public class School {
 	
 	public Classroom getClassroom(int index) { return this.classes.get(index);  }
 	
+	//Helper Function
 	public void addClass(Classroom newClass) {  this.classes.add(newClass);  }
 }
