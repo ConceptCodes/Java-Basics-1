@@ -5,13 +5,14 @@ import java.util.*;
 public class Account {
 	
 	public static Classroom class1, class2;
-	public static Teacher David, TayK;
+	public static Teacher David, TayK, Mitch;
 	public static School ycp;
 	
 	public static void main(String[] args) {	
 		//Teachers
 		David = new Teacher("David", "Ojo", 19, "Black", 12, 207);
 		TayK = new Teacher("Kaelan", "Dowdall", 20, "White", 6, 113);
+		Mitch = new Teacher("Mitchell", "LaBenski", 19, "White", 9, 666);
 		
 		// Biology Class
 		class1 = new Classroom(David, "Biology");
